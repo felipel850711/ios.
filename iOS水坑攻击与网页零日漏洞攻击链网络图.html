@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iOS 水坑攻击 × 网页零日漏洞 攻击链网络图</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    background: linear-gradient(135deg, #0d1117 0%, #161b22 100%);
+    color: #e6edf3;
+    min-height: 100vh;
+    padding: 30px 20px;
+  }
+  h1 {
+    text-align: center;
+    color: #58a6ff;
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  .subtitle {
+    text-align: center;
+    color: #8b949e;
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+  .legend {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: #8b949e;
+  }
+  .legend-dot {
+    width: 14px; height: 14px;
+    border-radius: 50%;
+  }
+  .stages {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  .stage {
+    margin-bottom: 40px;
+  }
+  .stage-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .stage-num {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #fff;
+    flex-shrink: 0;
+  }
+  .s1 .stage-num { background: #f85149; }
+  .s2 .stage-num { background: #d29922; }
+  .s3 .stage-num { background: #a371f7; }
+  .s4 .stage-num { background: #3fb950; }
+  .nodes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .node {
+    flex: 1 1 240px;
+    min-width: 220px;
+    background: #1c2128;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 16px;
+    position: relative;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .node:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(88,166,255,.15);
+  }
+  .node h3 {
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+  .node p {
+    font-size: 12px;
+    color: #8b949e;
+    line-height: 1.6;
+  }
+  .node .tag {
+    display: inline-block;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-top: 10px;
+    margin-right: 6px;
+  }
+  .tag-cve { background: rgba(248,81,73,.15); color: #f85149; }
+  .tag-tech { background: rgba(88,166,255,.15); color: #58a6ff; }
+  .tag-tool { background: rgba(63,185,80,.15); color: #3fb950; }
+  .arrow-row {
+    text-align: center;
+    font-size: 26px;
+    color: #484f58;
+    margin: -28px 0 22px;
+  }
+  .split {
+    display: flex;
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .split .node { border-left: 3px solid; }
+  .b-red { border-left-color: #f85149 !important; }
+  .b-yellow { border-left-color: #d29922 !important; }
+  .b-purple { border-left-color: #a371f7 !important; }
+  .b-green { border-left-color: #3fb950 !important; }
+  .connection {
+    background: #1c2128;
+    border: 1px dashed #d29922;
+    border-radius: 10px;
+    padding: 18px;
+    margin: 10px 0 30px;
+    font-size: 13px;
+    color: #d29922;
+    line-height: 1.8;
+  }
+  .connection strong { color: #e3b341; }
+  .final {
+    background: linear-gradient(135deg, rgba(63,185,80,.1), rgba(63,185,80,.05));
+    border: 1px solid #3fb950;
+  }
+  .final h3 { color: #3fb950; }
+  .mitigations {
+    max-width: 1300px;
+    margin: 40px auto 0;
+    background: #1c2128;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .mitigations h2 {
+    color: #58a6ff;
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+  .mit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+  }
+  .mit-item {
+    background: #0d1117;
+    border-radius: 8px;
+    padding: 14px;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+  .mit-item b { color: #58a6ff; display: block; margin-bottom: 4px; }
+  .footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #484f58;
+    font-size: 12px;
+  }
+  .footer a { color: #58a6ff; text-decoration: none; }
+</style>
+</head>
+<body>
+
+<h1>iOS 水坑攻击 × 网页零日漏洞 攻击链网络图</h1>
+<div class="subtitle">Watering Hole Attack Chain 与 In-the-Wild WebKit Zero-Day Exploitation 流程可视化</div>
+
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#f85149"></div>侦察与准备</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#d29922"></div>投毒与植入</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#a371f7"></div>零日漏洞利用</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#3fb950"></div>控制与窃密</div>
+</div>
+
+<div class="stages">
+
+  <!-- 阶段 1 -->
+  <div class="stage s1">
+    <div class="stage-title"><div class="stage-num">1</div>目标侦察与准备阶段</div>
+    <div class="nodes">
+      <div class="node b-red">
+        <h3>目标群体画像</h3>
+        <p>攻击者确定目标群体：政府人员、记者、人权活动家、企业高管，分析其上网习惯与常访网站。</p>
+        <span class="tag tag-tech">OSINT 开源情报</span>
+        <span class="tag tag-tool">社交网络分析</span>
+      </div>
+      <div class="node b-red">
+        <h3>网站踩点</h3>
+        <p>识别目标群体高频访问的受信任网站：行业协会、新闻媒体、地方政府、宗教、论坛站点。</p>
+        <span class="tag tag-tech">流量画像</span>
+      </div>
+      <div class="node b-red">
+        <h3>漏洞武器化</h3>
+        <p>将 WebKit 零日漏洞制作成浏览器漏洞利用工具包（Exploit Kit），按目标 iOS 版本做指纹适配。</p>
+        <span class="tag tag-cve">WebKit 0-day</span>
+        <span class="tag tag-tool">Exploit Kit</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow-row">▼</div>
+
+  <!-- 阶段 2 -->
+  <div class="stage s2">
+    <div class="stage-title"><div class="stage-num">2</div>网站投毒与植入阶段</div>
+    <div class="nodes">
+      <div class="node b-yellow">
+        <h3>入侵目标网站</h3>
+        <p>通过 SQL 注入、弱口令、供应链（CMS 插件）等手段入侵目标群体信任的第三方网站服务器。</p>
+        <span class="tag tag-tech">Web 入侵</span>
+        <span class="tag tag-cve">CVE-2024-38368</span>
+      </div>
+      <div class="node b-yellow">
+        <h3>注入恶意脚本</h3>
+        <p>在页面中植入隐蔽的 JS 判断脚本，对访客做 IP、设备、系统版本指纹识别。</p>
+        <span class="tag tag-tech">iframe 注入</span>
+        <span class="tag tag-tech">JS 重定向</span>
+      </div>
+      <div class="node b-yellow">
+        <h3>选择性投放</h3>
+        <p>只对符合条件的 iOS 目标设备展示漏洞页面，其他访客看到正常内容（低频触发防溯源）。</p>
+        <span class="tag tag-tech">指纹匹配</span>
+        <span class="tag tag-tool">低频触发</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow-row">▼</div>
+
+  <!-- 阶段 3 -->
+  <div class="stage s3">
+    <div class="stage-title"><div class="stage-num">3</div>零日漏洞利用阶段（iOS Safari/WebKit）</div>
+
+    <div class="connection">
+      <strong>关键交汇点</strong>：目标用户使用 iPhone 通过 Safari（或任何调用 WebKit 的应用）访问被投毒页面 —— WebKit 渲染引擎在解析恶意网页时触发零日漏洞链。
+    </div>
+
+    <div class="split">
+      <div class="node b-purple">
+        <h3>第一步：渲染引擎漏洞</h3>
+        <p>WebCore 解析恶意构造的 HTML/SVG/CSS 时触发 UAF 或类型混淆，获得 WebContent 进程内的初始代码执行。</p>
+        <span class="tag tag-cve">CVE-2023-28205 UAF</span>
+        <span class="tag tag-cve">CVE-2023-32409 溢出</span>
+      </div>
+      <div class="node b-purple">
+        <h3>第二步：JSC 提升原语</h3>
+        <p>JavaScriptCore 推测优化漏洞构造 addrof/fakeobj 原语，升级为任意读写能力。</p>
+        <span class="tag tag-cve">CVE-2023-38681 类型混淆</span>
+        <span class="tag tag-tech">JIT / JITless 均可触发</span>
+      </div>
+      <div class="node b-purple">
+        <h3>第三步：沙箱逃逸</h3>
+        <p>利用 IPC/内核接口漏洞逃逸 WebContent 沙箱，从浏览器进程权限提升到用户态 root。</p>
+        <span class="tag tag-cve">CVE-2023-38071 内核提权</span>
+        <span class="tag tag-tech">XNU Sandbox Escape</span>
+      </div>
+      <div class="node b-purple">
+        <h3>第四步：内核与持久化</h3>
+        <p>利用内核漏洞获得最高权限，关闭安全机制，植入持久化后门（配合 PAC/SPTM 绕过技术）。</p>
+        <span class="tag tag-cve">CVE-2022-42823 信息泄露</span>
+        <span class="tag tag-tech">KTRR / PPL 绕过</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow-row">▼</div>
+
+  <!-- 阶段 4 -->
+  <div class="stage s4">
+    <div class="stage-title"><div class="stage-num">4</div>控制与窃密阶段</div>
+    <div class="nodes">
+      <div class="node b-green">
+        <h3>间谍软件植入</h3>
+        <p>加载完整间谍软件框架（Pegasus、Predator、Coruna、DarkSword 等），常驻内存或持久化。</p>
+        <span class="tag tag-tool">商业间谍软件</span>
+      </div>
+      <div class="node b-green">
+        <h3>数据窃取</h3>
+        <p>窃取 iMessage、WhatsApp、Telegram 通讯记录、麦克风/摄像头、GPS 位置、密码与密钥。</p>
+        <span class="tag tag-tech">零点击收集</span>
+      </div>
+      <div class="node b-green">
+        <h3>远程指令</h3>
+        <p>通过 C2 服务器下发指令，回传加密数据，支持远程完全控制设备。</p>
+        <span class="tag tag-tech">C2 通信</span>
+        <span class="tag tag-tech">域名前置</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- 缓解措施 -->
+<div class="mitigations">
+  <h2>防御链路（与攻击链对应）</h2>
+  <div class="mit-grid">
+    <div class="mit-item"><b>① 及时更新 iOS</b>补丁发布后尽快升级，消除在野零日（如 iOS 16.4.1 / 16.5 / 16.5.1 / 16.6.1 修复的系列 WebKit 漏洞）。</div>
+    <div class="mit-item"><b>② 启用锁定模式</b>禁用 JIT、限制消息附件，直接切断阶段 3 的部分漏洞利用路径。</div>
+    <div class="mit-item"><b>③ 使用具备拦截能力的安全浏览</b>启用欺诈网站警告，避免访问被投毒站点；企业可部署 DNS 过滤。</div>
+    <div class="mit-item"><b>④ 通信工具加密</b>使用 Signal 等端到端加密工具，即便设备被植入也可限制泄露面。</div>
+    <div class="mit-item"><b>⑤ 网站运营方加固</b>及时更新 CMS/插件（防供应链投毒）、部署 CSP、监控异常脚本注入。</div>
+    <div class="mit-item"><b>⑥ 流量与日志检测</b>网络侧检测异常 iframe/重定向链；移动侧检查可疑配置描述文件与进程。</div>
+  </div>
+</div>
+
+<div class="footer">
+  <p>iOS 水坑攻击 × 网页零日漏洞攻击链网络图 | 2026-10-09</p>
+  <p>咨询 iOS 系统安全请联系 Telegram：<a href="https://t.me/one00190">https://t.me/one00190</a></p>
+</div>
+
+</body>
+</html>
