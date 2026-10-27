@@ -4,7 +4,7 @@
 @@INFO@@难度|深度分析
 @@INFO@@工具|iOS 利用套件逆向与威胁情报
 @@INFO@@目标|安全研究人员 / 威胁情报分析师 / 取证从业者
-@@INFO@@联系方式|Telegram: https://t.me/ios_one001
+@@INFO@@联系方式|Telegram: https://t.me/one00190
 @@TOC@@目录
 
 # iOS Coruna 漏洞利用框架深度分析
@@ -2013,4 +2013,4 @@ Coruna 未必是"最锋利"的 iOS 利用，但它可能是"最懂得算覆盖�
 
 ---
 
-**联系方式**：Telegram: https://t.me/ios_one001
+**联系方式**：Telegram: https://t.me/one00190

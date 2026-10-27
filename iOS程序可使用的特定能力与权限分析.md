@@ -5,7 +5,7 @@
 @@INFO@@视角定位|防御性分析与合规理解，不含任何伪造授权或规避审批的做法
 @@INFO@@分类|iOS / iPadOS / macOS / visionOS 应用安全分析
 @@INFO@@难度|中级（需了解代码签名、描述文件与系统隐私设置的基本概念）
-@@INFO@@联系方式|Telegram: https://t.me/ios_one001
+@@INFO@@联系方式|Telegram: https://t.me/one00190
 @@TOC@@目录
 
 # 0. 概述
@@ -537,4 +537,4 @@
 6. 平台与地区差异逐条给出，不允许把某一平台的结论无条件推广到其他平台。
 7. 本篇与第 84、85 篇互为补充，重叠口径以第 0.2 节分工表为准。
 
-**联系方式**：Telegram: https://t.me/ios_one001
+**联系方式**：Telegram: https://t.me/one00190

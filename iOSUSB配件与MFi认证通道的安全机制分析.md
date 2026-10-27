@@ -5,7 +5,7 @@
 @@INFO@@视角定位|防御与分析视角，不含绕过方法、不含利用代码、不含针对他人设备的操作步骤、不含配件仿制、证书重放或认证集成电路克隆的实施细节
 @@INFO@@分类|物理接口与配件信任链 / 认证授权门与数据连接门的双门结构 / 官方手册层措辞与顾问页措辞的**互不点名**对照
 @@INFO@@难度|进阶（第 1 章的"两道门"区分与第 12 章的双向沉默是全篇前提；跳过它们会把手册层的机制句读成协议声明，把措辞层的段落名读成实现层）
-@@INFO@@联系方式|Telegram: https://t.me/ios_one001
+@@INFO@@联系方式|Telegram: https://t.me/one00190
 @@TOC@@
 
 # 0 本篇要回答什么
@@ -1348,4 +1348,4 @@ CVE-2026-86924（`MobileAccessoryUpdater`，4 段 / 4 页：149034、149035、14
 
 **边界声明：** 本报告全部机制表述取自《Apple 平台安全保护》中文全量 179 页与英文取样 27 页的正文原句（附 `sec<hash>` 与页面发布日期），全部缺陷表述取自 Apple 安全响应顾问页本期 257 份镜像的 Impact、Description、致谢、条目备注与 Available for 字段原句（附页号与产品版本）。本报告不含绕过方法、不含利用代码、不含有针对性他人设备的操作步骤、不含配件仿制或证书重放的实施细节；第 18 章仅支持"能否核查某项公开文本所述状态"级别的运维动作。源码层（XNU 及用户态开源部件）本期不可用，故第 9、11 章全部实现层归属均降级为"顾问页将其归入某组件段落名之下"，段落名不是实现层证据。第三方机构名（Citizen Lab、GrapheneOS、Oligo Security、Trend Micro Zero Day Initiative、iVerify、Kandji、Trail of Bits、Renault、Cisco Talos、Talence Security、KAIST SysSec Lab、Google Threat Analysis Group、SyNSec Lab at Penn State）一律只作为顾问页致谢字段中出现的名字被引用，本报告不引用、不转述、不背书这些机构的任何研究结论；第 17 章 G1–G15 与第 13.3、14.6 节记录的自我纠正在先：本篇初稿因取块正则只识别旧版 HTML 标记，静默漏掉最新 10 页的 1,430 个段落，核心族分母、若干词频与两条"0 次"论点已在本版更正，更正清单见第 14.6 节。凡本报告未登记为已核实的表述，均应视为缺口而非结论。
 
-Telegram: https://t.me/ios_one001
+Telegram: https://t.me/one00190

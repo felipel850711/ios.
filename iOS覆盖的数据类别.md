@@ -5,7 +5,7 @@
 @@INFO@@影响范围|iPhone、iPad、Apple Watch、AirPods、Apple TV、CarPlay、HomeKit 与空间计算设备构成的 Apple 设备生态
 @@INFO@@分类|网络安全 · 数据治理 · 隐私保护
 @@INFO@@难度|中级偏高级（需了解 iOS 数据保护机制与移动隐私合规基础）
-@@INFO@@联系方式|Telegram: https://t.me/ios_one001
+@@INFO@@联系方式|Telegram: https://t.me/one00190
 
 @@TOC@@目录
 
@@ -2087,4 +2087,4 @@ iOS 的授权模型是逐类别的（第 6.3 节以 HealthKit 为最完整实现
 | Face ID 与口罩模式 | 开启后有效期 6.5 小时；含口罩模式的误匹配率表述 | 《PSG》（26.5 版） | 影响"生物特征解锁类密钥"的实际窗口长度 |
 | 旧系统维护线 | 同一发布列表可见 iOS 26.7 / 26.5.2 等条目及 iPadOS 15.8.8 类长期条目 | 部分核实（未逐条核对） | 长期支持设备仍可能停留在较弱的机制版本 |
 
-**联系方式**：Telegram: https://t.me/ios_one001
+**联系方式**：Telegram: https://t.me/one00190

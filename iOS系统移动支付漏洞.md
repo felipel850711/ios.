@@ -4,7 +4,7 @@
 @@INFO@@难度|深度分析
 @@INFO@@工具|iOS 移动支付安全研究
 @@INFO@@目标|安全研究人员 / 支付开发者 / 金融科技从业者
-@@INFO@@联系方式|Telegram: https://t.me/ios_one001
+@@INFO@@联系方式|Telegram: https://t.me/one00190
 @@TOC@@目录
 
 ---
@@ -2349,4 +2349,4 @@ A：① 抗钓鱼身份（安全密钥/设备绑定认证）；② 账户变更�
 
 ---
 
-**联系方式**：Telegram: https://t.me/ios_one001
+**联系方式**：Telegram: https://t.me/one00190

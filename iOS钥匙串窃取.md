@@ -4,7 +4,7 @@
 @@INFO@@难度|深度分析
 @@INFO@@工具|iOS Keychain 安全研究
 @@INFO@@目标|安全研究人员 / iOS 开发者 / 取证从业者
-@@INFO@@联系方式|Telegram: https://t.me/ios_one001
+@@INFO@@联系方式|Telegram: https://t.me/one00190
 @@TOC@@目录
 
 # 本报告导览
@@ -2009,4 +2009,4 @@ provider.generateKey { keyId, error in
 
 ---
 
-**联系方式**：Telegram: https://t.me/ios_one001
+**联系方式**：Telegram: https://t.me/one00190

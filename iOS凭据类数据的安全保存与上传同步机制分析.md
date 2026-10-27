@@ -5,7 +5,7 @@
 @@INFO@@视角定位|防御与研究教育视角：回答"这份凭据究竟存在哪里、由哪把密钥保护、谁能读到它、什么条件下才被允许上传出去"，并给出防线设计与审计可直接使用的判定链与可观测痕迹
 @@INFO@@分类|网络安全 · 凭据管理 · 密钥层级 · 端对端同步
 @@INFO@@难度|中级偏高级（需了解对称加密与密钥封装基础、公钥基础设施与 X.509 链、iOS 代码签名与权限体系）
-@@INFO@@联系方式|Telegram: https://t.me/ios_one001
+@@INFO@@联系方式|Telegram: https://t.me/one00190
 
 @@TOC@@目录
 
@@ -2147,7 +2147,7 @@ A 级，逐字：
    另有若干 slug 需按 identifier 大小写访问（`Security/certificate-key-and-trust-services` 大写返回 200、小写 404），故本篇把"大小写不稳定"记为抓取方法论事实（§13.8）。
 6. **三处官方页面存在但无 Overview 正文**：`security/seckeychain`、`authenticationservices/asauthorizationcredential`、`ascredentialidentitystorestate`——相关结论标为部分核实。
 7. **安全边界**：本篇只引用官方防御性表述、存储落点、配置要求与错误语义；**未写入任何攻击、绕过、提取凭据或规避保护的操作步骤**；§15.4 清单全部为"是否成立"的自查问句。
-**联系方式**：Telegram: https://t.me/ios_one001
+**联系方式**：Telegram: https://t.me/one00190
 
 
 

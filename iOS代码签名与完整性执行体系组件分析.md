@@ -5,7 +5,7 @@
 @@INFO@@视角定位|防御性分析与架构理解，不含任何绕过、篡改或规避实现
 @@INFO@@分类|iOS / macOS 安全机制分析
 @@INFO@@难度|中级至高级（需了解 Mach-O、内核权限模型与公钥基础设施基本概念）
-@@INFO@@联系方式|Telegram: https://t.me/ios_one001
+@@INFO@@联系方式|Telegram: https://t.me/one00190
 @@TOC@@目录
 
 # 0. 概述
@@ -553,4 +553,4 @@ macOS 侧的口径把两条路分开：App Store 中的所有 App 均已由 Appl
 6. 术语对照表中的社区表述仅用于沟通对齐，不构成对第三方实现细节的确认。
 7. 本篇与本系列其他各篇互为补充，重叠处以第 10.4 节分工表为准，不重复展开。
 
-**联系方式**：Telegram: https://t.me/ios_one001
+**联系方式**：Telegram: https://t.me/one00190

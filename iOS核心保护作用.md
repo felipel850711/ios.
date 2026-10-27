@@ -5,7 +5,7 @@
 @@INFO@@视角定位|威胁中心（而非机制中心）；与系列内三篇机制综述报告构成互补而非重复
 @@INFO@@分类|网络安全 · 防护评估 · 威胁建模
 @@INFO@@难度|中级偏高级（需了解 iOS 防护体系与各威胁类别的攻击前提）
-@@INFO@@联系方式|Telegram: https://t.me/ios_one001
+@@INFO@@联系方式|Telegram: https://t.me/one00190
 
 @@TOC@@目录
 
@@ -2625,4 +2625,4 @@ iOS 的核心保护是否起作用，主要不取决于机制设计，而取决�
 
 ---
 
-**联系方式**：Telegram: https://t.me/ios_one001
+**联系方式**：Telegram: https://t.me/one00190

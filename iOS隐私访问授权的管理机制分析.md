@@ -5,7 +5,7 @@
 @@INFO@@视角定位|授权状态的完整生命周期与三条治理路径（不是能力键目录，也不是围栏层次）
 @@INFO@@分类|平台安全机制分析（防御性 / 教育性）
 @@INFO@@难度|中（以文档比对与术语澄清为主）
-@@INFO@@联系方式|Telegram: https://t.me/ios_one001
+@@INFO@@联系方式|Telegram: https://t.me/one00190
 @@TOC@@目录
 
 # 0. 概述、分工与口径
@@ -942,6 +942,6 @@ Core Location 另有一篇专门处理提示时机的文稿，做法是显式获
 
 ---
 
-**联系方式**：Telegram: https://t.me/ios_one001
+**联系方式**：Telegram: https://t.me/one00190
 
 

@@ -4,7 +4,7 @@
 @@INFO@@难度|深度分析
 @@INFO@@工具|iOS 消息链路安全研究
 @@INFO@@目标|安全研究人员 / iOS 开发者 / 消息平台运营者
-@@INFO@@联系方式|Telegram: https://t.me/ios_one001
+@@INFO@@联系方式|Telegram: https://t.me/one00190
 @@TOC@@目录
 
 ---
@@ -2589,4 +2589,4 @@ iOS 在"短信/链接触发"这一攻击面上的十年演进，是移动安全�
 
 ---
 
-**联系方式**：Telegram: https://t.me/ios_one001
+**联系方式**：Telegram: https://t.me/one00190

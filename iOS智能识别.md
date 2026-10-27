@@ -5,7 +5,7 @@
 @@INFO@@影响范围|iOS 12 至 iOS 27 各世代的端智能识别栈；现行 iOS 27 支持机型为 iPhone 11 及更新机型（Apple Intelligence 需 iPhone 15 Pro/Pro Max、iPhone 16 系列及更新、iPhone Air），旧机型仍保留传统识别能力
 @@INFO@@分类|网络安全 · 端侧AI · 隐私保护
 @@INFO@@难度|高级（需了解 iOS 系统架构、机器学习基础与移动隐私合规）
-@@INFO@@联系方式|Telegram: https://t.me/ios_one001
+@@INFO@@联系方式|Telegram: https://t.me/one00190
 
 @@TOC@@目录
 
@@ -2016,4 +2016,4 @@ LiDAR/深度捕捉、房间网格化、三维资产（USDZ 类）与空间计算
 
 本报告全篇遵循同一原则：可查证的事实给出出处与措辞来源，未经公开的机制细节保持为开放问题，风险等级按证据层级而非叙述吸引力来定。端侧智能识别的价值与风险来自同一个技术选择——把推理放到用户身边。防御工作的重点不是消除这一选择，而是让它的数据留存、路由决策、失败行为与删除语义变成可审计、可配置、可验证的工程事实。
 
-**联系方式**：Telegram: https://t.me/ios_one001
+**联系方式**：Telegram: https://t.me/one00190

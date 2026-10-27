@@ -4,7 +4,7 @@
 @@INFO@@难度|深度分析
 @@INFO@@工具|iOS 系统功能研究
 @@INFO@@目标|安全研究人员 / iOS 开发者
-@@INFO@@联系方式|Telegram: https://t.me/ios_one001
+@@INFO@@联系方式|Telegram: https://t.me/one00190
 @@TOC@@目录
 
 ## 第一章 执行摘要与核心发现
@@ -2608,4 +2608,4 @@ iOS 的标志性功能与体验，不仅是技术创新的成果，更是对"人
 
 ---
 
-**联系方式**：Telegram: https://t.me/ios_one001
+**联系方式**：Telegram: https://t.me/one00190
